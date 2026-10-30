@@ -89,8 +89,8 @@ public class Patterns {
         *
     */
    static void pattern5(int n){
-        pattern2(5);
-        pattern3(4);
+        pattern2(n);
+        pattern3(n - 1);
     }
 
     /*
