@@ -1,0 +1,28 @@
+/*
+Given an integer n. You need to recreate the pattern given below for any value of N. Let's say for N = 5, the pattern should look like as below:
+
+*****
+*****
+*****
+*****
+*****
+
+Print the pattern in the function given to you.
+1 <= n <= 100
+*/
+
+public class Solution1 {
+    public static void main(String[] args) {
+        printPattern(5);
+    }
+
+    private static void printPattern(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
