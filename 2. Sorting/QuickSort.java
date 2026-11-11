@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public class QuickSort {
     public static void main(String[] args) {
-        int[] nums = {5, 7, 8, 0, -4, -8, 941};
+        int[] nums = { 5, 7, 8, 0, -4, -8, 941, 5, 8 };
         quickSort(nums, 0, nums.length - 1);
         System.out.println(Arrays.toString(nums));
     }
@@ -22,4 +22,33 @@ public class QuickSort {
         quickSort(nums, start, pivotIdx - 1);
         quickSort(nums, pivotIdx + 1, end);
     }
+
+    private static int pivot(int[] nums, int start, int end) {
+        int pivot = nums[start];
+        int left = start;
+        int right = end;
+
+        while (left < right) {
+            while (left <= end && nums[left] <= pivot) {
+                left++;
+            }
+
+            while (right >= start && nums[right] > pivot) {
+                right--;
+            }
+
+            if (left < right) {
+                int temp = nums[left];
+                nums[left] = nums[right];
+                nums[right] = temp;
+            }
+        }
+
+        int temp = nums[right];
+        nums[right] = nums[start];
+        nums[start] = temp;
+
+        return right;
+    }
+
 }
